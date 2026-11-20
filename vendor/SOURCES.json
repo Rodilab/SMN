@@ -1,0 +1,629 @@
+{
+  "stmlib_commit": "d18def816c51d1da0c108236928b2bbd25c17481",
+  "files": [
+    {
+      "path": "vendor/plaits/dsp/dsp.h",
+      "origin": "plaits/dsp/dsp.h",
+      "source_sha256": "0ef1f2c2eecfd54fc6da40de0117e68e3804e412c55b575c027eba35f7439625",
+      "change": "Sample-rate constants are constexpr at 44100 Hz; original Plaits PLL comment replaced.",
+      "vendored_sha256": "67191e0af0e5b4dcbdf6caf64f3b9716e4272b6527aa3a2ca3435d4dc255b27a"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/engine.h",
+      "origin": "plaits/dsp/engine/engine.h",
+      "source_sha256": "c31fa0ad1585c4fff9451d844dab4bfaff1823dc677cebf182957827518a43ef",
+      "change": "Add SMN EngineOutput enum; existing engine interface and state retained. Inactive-state policy is engine-specific.",
+      "vendored_sha256": "3f3b5d8b952a482f150b46ce2071812ca612047e2b64fc73c72aa9e1d73809d6"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/waveshaping_engine.h",
+      "origin": "plaits/dsp/engine/waveshaping_engine.h",
+      "source_sha256": "d8f2d7be5ec0946682ec19dda3ed97aad18588fa4db9208e815d22a43d5bfa12",
+      "change": "Add normalized-frequency and selected-output overloads; original virtual note API/state retained.",
+      "vendored_sha256": "30cc9b3437a52913c3d062c470e918371a9838b5ee8a4fac5b45c6e1aff8c98f"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/waveshaping_engine.cc",
+      "origin": "plaits/dsp/engine/waveshaping_engine.cc",
+      "source_sha256": "ee7b7ef6a7746f17d2e8eaf4e73a7ad4c0dd8122190cecc43ac3750e770ce546",
+      "change": "Shared normalized-frequency preparation and specialized final MAIN/AUX loops; both oscillator and interpolation histories advance in all modes.",
+      "vendored_sha256": "f857c87640aa10d94ff95ca1cba2d54db31e949c87e1bbdfb623c2a9db43cf28"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/oscillator.h",
+      "origin": "plaits/dsp/oscillator/oscillator.h",
+      "source_sha256": "635fa2d1b53b9ea789f4022f2c7865d9d5b6908a5ab4be68ae20842d74a02d15",
+      "change": "Bound the slope BLEP correction time to [0,1] when pulse-width changes cross phase at low frequency; sanitizer regression test.",
+      "vendored_sha256": "a3c1607f7834dc91204e2cd6675da78607079f97f04ac9aa96a32bc7bd26d7ce"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/sine_oscillator.h",
+      "origin": "plaits/dsp/oscillator/sine_oscillator.h",
+      "source_sha256": "7833402c53117fe1325c7959bc2301f92b963a8d80c0e752e80062d2e6dd07e8",
+      "change": "Add positive bounded SinePositiveWrap lookup for SMN Additive: wrap the 512-entry table index with one conversion pair. Original Sine and other oscillators unchanged. Swarm silent additive API preserves recurrence/amplitude histories without producing output. Stage 174: add additive reciprocal overload for Swarm; existing public APIs compute their reciprocal and retain the same recurrence/interpolation. Terrain: quadrature reciprocal overload, same recurrence and legacy API.",
+      "vendored_sha256": "d238dbbfad23b89fed6245955e82fdce2cb71de6362ffbdfea7bb7d95da4c8b1"
+    },
+    {
+      "path": "vendor/plaits/resources.h",
+      "origin": "plaits/resources.h",
+      "source_sha256": "a7ee997d0c951e968af91625f43d0876b260cb809d22345703f2656589d95bb3",
+      "change": "none",
+      "vendored_sha256": "a7ee997d0c951e968af91625f43d0876b260cb809d22345703f2656589d95bb3"
+    },
+    {
+      "path": "vendor/plaits/resources_waveshaping.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Exact selected definitions; original license retained.",
+      "symbols": [
+        "lut_sine",
+        "lut_fold",
+        "lut_fold_2",
+        "lut_ws_inverse_tan",
+        "lut_ws_inverse_sin",
+        "lut_ws_linear",
+        "lut_ws_bump",
+        "lut_ws_double_bump",
+        "lookup_table_i16_table"
+      ],
+      "vendored_sha256": "ee0bff7b162864770ecbb4884ba6fa7b5c25faf27d06e707a9e3dc27cc8032c7"
+    },
+    {
+      "path": "vendor/stmlib/stmlib.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/stmlib.h",
+      "source_sha256": "3afc8589a951e882d9eea16b3eda8623dd6fb0079dd11dfbce817e65be6cfba9",
+      "change": "none",
+      "vendored_sha256": "3afc8589a951e882d9eea16b3eda8623dd6fb0079dd11dfbce817e65be6cfba9"
+    },
+    {
+      "path": "vendor/stmlib/dsp/dsp.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/dsp.h",
+      "source_sha256": "98b42900c4accbe9fbb2cfe2ec6fada024b57ec9a1becff008b0f35bd4fd8ddb",
+      "change": "none",
+      "vendored_sha256": "98b42900c4accbe9fbb2cfe2ec6fada024b57ec9a1becff008b0f35bd4fd8ddb"
+    },
+    {
+      "path": "vendor/stmlib/dsp/units.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/units.h",
+      "source_sha256": "70cf104c06f0e34ada90416f121417a13d17b6736116f0fc07063c1cd2084877",
+      "change": "none",
+      "vendored_sha256": "70cf104c06f0e34ada90416f121417a13d17b6736116f0fc07063c1cd2084877"
+    },
+    {
+      "path": "vendor/stmlib/dsp/parameter_interpolator.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/parameter_interpolator.h",
+      "source_sha256": "4b05028c320e6946418a36e9662a4e5a142e5bfab0423835a77d074d9c7fc217",
+      "change": "Multiply parameter deltas by reciprocal of variable block size so inlined interpolators share the division; original API and float-step overload preserved. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "de22835f6ca832ccfdccfdda1869e8b9df26cc4b9ea246ee428e3a2c1070eeb6"
+    },
+    {
+      "path": "vendor/stmlib/dsp/polyblep.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/polyblep.h",
+      "source_sha256": "b36025a8a9b2e9a37156e45cfdee937451f788529089b51b9f490da1a5b0063b",
+      "change": "none",
+      "vendored_sha256": "b36025a8a9b2e9a37156e45cfdee937451f788529089b51b9f490da1a5b0063b"
+    },
+    {
+      "path": "vendor/stmlib/dsp/rsqrt.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/rsqrt.h",
+      "source_sha256": "da1483cd97e0bcfcb3734ff3bfea1c46fdcbd5a282abab7a3a4be9d5adbdeabb",
+      "change": "none",
+      "vendored_sha256": "da1483cd97e0bcfcb3734ff3bfea1c46fdcbd5a282abab7a3a4be9d5adbdeabb"
+    },
+    {
+      "path": "vendor/stmlib/utils/dsp.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/utils/dsp.h",
+      "source_sha256": "c0fad7f6b5b20f053d184614a35baf595e41f1394db53f80ac742d7467dbbe1b",
+      "change": "none",
+      "vendored_sha256": "c0fad7f6b5b20f053d184614a35baf595e41f1394db53f80ac742d7467dbbe1b"
+    },
+    {
+      "path": "vendor/stmlib/utils/buffer_allocator.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/utils/buffer_allocator.h",
+      "source_sha256": "5f29d58fa9fd5cb0872326cf42b17345a059940c485c6b64a44353d38e7bc2e0",
+      "change": "none",
+      "vendored_sha256": "5f29d58fa9fd5cb0872326cf42b17345a059940c485c6b64a44353d38e7bc2e0"
+    },
+    {
+      "path": "vendor/stmlib/dsp/units.cc",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/units.cc",
+      "source_sha256": "0acbe230ffaa2d181ba285fce54f2fd0b2339b3ec163a1dd00c946e6bf82ea4a",
+      "change": "none",
+      "vendored_sha256": "0acbe230ffaa2d181ba285fce54f2fd0b2339b3ec163a1dd00c946e6bf82ea4a"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine2/virtual_analog_vcf_engine.h",
+      "origin": "plaits/dsp/engine2/virtual_analog_vcf_engine.h",
+      "source_sha256": "089c34b8688031b576e1d912200e718135ddd52477f018e854d838fb0d2533ea",
+      "change": "Unused VariableSaw include removed; add normalized-frequency and selected-output overloads, original note API/state retained.",
+      "vendored_sha256": "8bd2871a053a1f0203c2420243942f4b1d537907f8708afaaa1b7ab79acb3274"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine2/virtual_analog_vcf_engine.cc",
+      "origin": "plaits/dsp/engine2/virtual_analog_vcf_engine.cc",
+      "source_sha256": "4635b1c8e77f786a3fc036ae969cfb788a5365a8e7abd8f971340d89ed6229c5",
+      "change": "Specialized VCF oscillators with startup fallback, normalized-frequency entry and selected final clip/mix; both filters and interpolators always advance. Copy both filters locally for block processing and copy complete final states back; equations, clipping and MAIN/AUX histories retained. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "b45dfd98735f2d5ee916900161364efef7d827fb4b2f8c82c3bcf59b405549ba"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/variable_shape_oscillator.h",
+      "origin": "plaits/dsp/oscillator/variable_shape_oscillator.h",
+      "source_sha256": "57213ecb20b6ec4914eb08c244adf697f0cf2388c0631deb52c34b79f693e51f",
+      "change": "Add opt-in VCF saw/square and fixed-square specializations reusing original states, generic startup and BLEP; keep triangle correction for interpolation rounding below 0.5. Default generic renderer preserved. Add opt-in hard-sync saw/square rendering for VA square with generic startup fallback. Add opt-in fixed-triangle phase output for phase distortion; shape remains zero in the private phase-distortion oscillators, slopes and histories retained. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "9286eb180ddb23ceeab972176d18687a9fa5b105431748645d47615651e29a44"
+    },
+    {
+      "path": "vendor/stmlib/dsp/filter.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/filter.h",
+      "source_sha256": "f4bbf97ac8dfdea255b8a37e179ba0286978c01a12ad8d3362eaa5862cf7c326",
+      "change": "Add single-sample multimode/BP shared-state helper for Noise with compile-time optional mix; add CopyFrom for coefficients and both integrator states used by VCF local block processing. Existing filter APIs, arithmetic and object layout unchanged. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "40f25979bf33efcdfbb2c2cde47080d24d562cd9ecfe861bcb4a5616d4a3fd70"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/virtual_analog_engine.h",
+      "origin": "plaits/dsp/engine/virtual_analog_engine.h",
+      "source_sha256": "1ebb726a80325c1e8c697534629d8cb503041aa654d674e745959dc805a78a6f",
+      "change": "Add direct-frequency selected-output entry. Selected MAIN/AUX fully suspends the other oscillator pair; BOTH retains dual output and object layout.",
+      "vendored_sha256": "a4218753ac4156b059501dae2605a065449220f79beb0b137db5378ebfb3984f"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/virtual_analog_engine.cc",
+      "origin": "plaits/dsp/engine/virtual_analog_engine.cc",
+      "source_sha256": "775957d866da2560409574bd99ab91147e17a1e3d843e0c5741dc51d54dd6651",
+      "change": "Variant 2; direct frequency ratios and square sync specialization. Render only the selected oscillator pair and its preparation; inactive pair and MAIN gain interpolators fully suspended, resumed without reset. BOTH keeps the dual path.",
+      "vendored_sha256": "0c19fdb27727a8fd706a1e46fafd2d96205104b3b28b07b4323e7ddc99aedf6a"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/variable_saw_oscillator.h",
+      "origin": "plaits/dsp/oscillator/variable_saw_oscillator.h",
+      "source_sha256": "9043ecf46a7c51ec0ad4187eae2b2ea8e87935fea14fa9e6090898ae21350ee2",
+      "change": "none",
+      "vendored_sha256": "9043ecf46a7c51ec0ad4187eae2b2ea8e87935fea14fa9e6090898ae21350ee2"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine2/phase_distortion_engine.h",
+      "origin": "plaits/dsp/engine2/phase_distortion_engine.h",
+      "source_sha256": "37858ca91df766580beee9fb0af06d5ad84720ece2e149cf50c8d86ada605aa0",
+      "change": "Add codec-rate normalized frequency and selected output entry; MAIN/AUX suspends the other oscillator completely, BOTH advances both. Original states and allocator API retained.",
+      "vendored_sha256": "0a1a7fba3c1c4b0edcc415157b895adca4a174924974cee5ef521c758905a8b6"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine2/phase_distortion_engine.cc",
+      "origin": "plaits/dsp/engine2/phase_distortion_engine.cc",
+      "source_sha256": "65ed91dae78bb727aa45d2233d00eb36ebd9b9caabe28a3942799c9da7161d48",
+      "change": "Retain 2x oversampling, normalized frequency and fixed-triangle specialization. Render only the selected independent phase oscillator; inactive phases, interpolations and pending correction fully suspended, resumed without reset. BOTH retains dual output.",
+      "vendored_sha256": "30de260ccc67832f7872db0e2d131e756f69193c8319aa84783ae8f9176143fa"
+    },
+    {
+      "path": "vendor/plaits/resources_phase_distortion.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Exact selected definition; original license retained.",
+      "vendored_sha256": "3496134ac483366fac3262629521f2a71a10986e87dcd6d4939e0ee9ed2c26fc",
+      "symbols": [
+        "lut_fm_frequency_quantizer"
+      ]
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/additive_engine.h",
+      "origin": "plaits/dsp/engine/additive_engine.h",
+      "source_sha256": "92f116f2ae0438d253e07c81f0c2b05614a2065d2ce6bc10fa284e84ba59d693",
+      "change": "Normalized frequency and selected-output entry; original API and state retained. Compile contiguous MAIN amplitude access separately from indexed organ access; remove identity-index table, preserving spectral arithmetic and state.",
+      "vendored_sha256": "306d250c0b863cab503bb9de02c5fef54394a4be45798aae3ceccc64ceef0f42"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/additive_engine.cc",
+      "origin": "plaits/dsp/engine/additive_engine.cc",
+      "source_sha256": "8af97e00572a3741fed16fdf7ebd6f579d4cccedf891c0ee2f2934204ee6450d",
+      "change": "Normalized frequency/selected output; all spectrum and phase histories advance. Locate the contiguous positive-gain spectral window and omit bump sine/powers outside it, preserving decay, sum order and normalization. Silent amplitude banks store end targets. Use SinePositiveWrap for bounded positive spectral bump phases; spectral formulas and normalization retained. Compile contiguous MAIN amplitude access separately from indexed organ access; remove identity-index table, preserving spectral arithmetic and state. Silent banks retain amplitude targets and copy completed phase/frequency from the audible bank; AUX silent MAIN updates follow the audible organ render. Share per-sample phase/fundamental between the two MAIN banks for blocks up to kMaxBlockSize; preserve separate high-harmonic seeds, recurrences and amplitude histories.",
+      "vendored_sha256": "58d1c43285419ef40428d3568bdb6fd95a37ca587ff1dce4a3c7357e0636f180"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/harmonic_oscillator.h",
+      "origin": "plaits/dsp/oscillator/harmonic_oscillator.h",
+      "source_sha256": "8b2afbf92bdbd10f919bd250b2b08d8ca4c5f2f1a2eb82c12db438e3306a96cf",
+      "change": "Optional silent render advances phases/frequency identically sample by sample and stores amplitude targets directly (rounding difference only); opt-in mask for four permanently zero organ slots. Audible interpolation and recurrence unchanged. Use SinePositiveWrap for the two positive high-harmonic seeds; recurrence, table interpolation and all states retained. Optional completed clock source for silent render skips redundant phase/frequency steps; no-source path and oscillator state retained. Share per-sample phase/fundamental between the two MAIN banks for blocks up to kMaxBlockSize; preserve separate high-harmonic seeds, recurrences and amplitude histories. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "e0b7806c9dc8c1f0fd9d01877493e6e305632652ab07c72963436ad0b08573fc"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/noise_engine.h",
+      "origin": "plaits/dsp/engine/noise_engine.h",
+      "source_sha256": "3c53ffed6a0225f41c4c7559d1b3068fbb2584a71d1b937b864d283902db2633",
+      "change": "Add direct-frequency and selected-output API; private RNG and one common primary-filter history.",
+      "vendored_sha256": "6a7bd3092bbf7180ae80410b26f647b52d0dfe2bfffecb50823bd625c58cd681"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/noise_engine.cc",
+      "origin": "plaits/dsp/engine/noise_engine.cc",
+      "source_sha256": "f57b326e51961fc05977a8c7141628d0414ea26e93aea8060790cb3fefdd4fd7",
+      "change": "Direct frequency with original upper f1 bound; selected mix only; identical primary LP/HP/BP histories merged, distinct secondary history always advanced.",
+      "vendored_sha256": "783c0e7071a121eb26d076b612a0e97526999a9342daa9b098251eb0d32c1038"
+    },
+    {
+      "path": "vendor/plaits/dsp/noise/clocked_noise.h",
+      "origin": "plaits/dsp/noise/clocked_noise.h",
+      "source_sha256": "dfe2b344b3fee9922474701587e69cae554c31d7e056e678383214671a4d6c70",
+      "change": "Receive a private RNG instance; original generator, BLEP and per-sample random draw preserved.",
+      "vendored_sha256": "c787ab59a6395d7c634dae80dc5eefd22df50ecaf7b81e32b21ecda5d680b222"
+    },
+    {
+      "path": "vendor/stmlib/utils/random.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/utils/random.h",
+      "source_sha256": "423f01e905fa279864878f34e42136ad1eb37a33dad58739affaaab06b793e5d",
+      "change": "Instance state and methods plus default constructor, instead of global static state; same 32-bit LCG sequence.",
+      "vendored_sha256": "7f61eb42e4d49a527e4075f746c0338e31db4ef2284240ebc7d39539aacd41eb"
+    },
+    {
+      "path": "vendor/stmlib/dsp/limiter.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/limiter.h",
+      "source_sha256": "cd6f800fd570a16c854706d0a6eb78b4be9a5e5b33bbc3ef91d18cb51e16ae76",
+      "change": "Attack/release coefficients adjusted from nominal 48 kHz to 44.1 kHz; limiter algorithm unchanged.",
+      "vendored_sha256": "e5556baa53704b0fbb5f563b2a6fc139dbedb8c277c03d1cea7b56f62529dbdb"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/modal_engine.h",
+      "origin": "plaits/dsp/engine/modal_engine.h",
+      "source_sha256": "03f2ab2cd8aec4dc48ca462a7bb411045951798aa9867e31f0b6e4424e993c6d",
+      "change": "Normalized-frequency and selected-output API, per-voice seed and ResetResonator forwarder. Original note/BOTH API retained. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused.",
+      "vendored_sha256": "bebb71e6ae0f72da1f09ae8e6d187d7e578827fae5ea96a46c42f2986109a289"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/modal_engine.cc",
+      "origin": "plaits/dsp/engine/modal_engine.cc",
+      "source_sha256": "6fb8374b32378bd7b99cd4cc7421b12af681ce973de03a7148ae901c99c71a7a",
+      "change": "Direct frequency, selected buffer only, time-correct HARMONICS smoothing table for 1..24 frames at 44100 Hz; BOTH retained. Stage 241: selected output written directly; remove zero-fill passes. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused.",
+      "vendored_sha256": "b5720dac883b2af9f58a8bd5ac96c78720f1e359483524c0dabc4737f8b1e785"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/modal_voice.h",
+      "origin": "plaits/dsp/physical_modelling/modal_voice.h",
+      "source_sha256": "0a068c46c82986ece0b2c178e67eeb3ab9500ef8e40609f1dfc3c1589f7c2e86",
+      "change": "Private per-voice RNG and selected-output argument; add state-only ResetResonator forwarder. Stage 241: private continuous-excitation template; no additional state. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused.",
+      "vendored_sha256": "f754560e3bf8685661104ebbe65ab2ab9882bcf8a974ed0d62d0edb0254c147b"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/modal_voice.cc",
+      "origin": "plaits/dsp/physical_modelling/modal_voice.cc",
+      "source_sha256": "c3e5ab1fd540f92e56ea62150a28304ff401930c1db243b2ebb42a5417660fec",
+      "change": "Instance RNG and per-block Dust reciprocal; 44100 Hz excitation event rate. AUX returns after excitation, omitting all resonator preparation and recurrence. SMN resets resonator before returning to MAIN. Stage 241: fuse continuous Dust generation with unchanged low-pass arithmetic, local private RNG state, fixed 0.8 accent specialization, direct AUX write and BOTH copy; generic strikes retained.",
+      "vendored_sha256": "8c2c572bb3c9b925fcecc78f9cf0ab16302b2e35370e8bb77fcd031cb8cb261f"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/resonator.h",
+      "origin": "plaits/dsp/physical_modelling/resonator.h",
+      "source_sha256": "0e674524bc13793d1ade9ff7bc5a4a96945f6bf82f1067b86bba5f95051effd0",
+      "change": "Factor BAND_PASS SVF using the same integrator states: BP=h*s1+g*h*(input-s2), s1=2*BP-s1, s2+=2*g*BP. One coefficient division per mode. Excitation LOW_PASS arithmetic retained. Add state-only Reset API; BAND_PASS sample loop unrolled by four; LOW_PASS loop retained; no mode reduction. SMN cap reduced from 24 to 20 then 16 modes, retaining the first sixteen gains and coefficients. Four full batches only; arrays and reset loops use the same cap. Compile-time check requires complete batches of four. Stage 241: single-filter generated-input low-pass method with unchanged equations and private states; used to eliminate intermediate raw-excitation buffer pass. Revision 342: retain original ranks 1-8,10,12,14,16 in 12 packed states/amplitudes; preserve original frequency/damping progression across omitted ranks.",
+      "vendored_sha256": "eba3aae97c29782383dd40715b2193872ef1ef6503eb63a3fc9d5987595c3c4f"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/resonator.cc",
+      "origin": "plaits/dsp/physical_modelling/resonator.cc",
+      "source_sha256": "6b51c987acd069f97b526a53ba431ece3e447981385dc193ebbe4557ff76fc6a",
+      "change": "q scaled by 44100/48000. Init delegates state clearing to Reset, preserving amplitudes/resolution without cosine work. Remove the now-unused silent-state Process path: AUX returns before the resonator. Initialize amplitudes only to the clamped resolution, safe for callers requesting the original 24 modes. Stage 241: first complete mode batch overwrites output; later batches add. Empty bank writes zero. Revision 342: retain original ranks 1-8,10,12,14,16 in 12 packed states/amplitudes; preserve original frequency/damping progression across omitted ranks.",
+      "vendored_sha256": "47086ff313741be36bf3b1404dc308614c6e43b16876b4ddce2498ff7ba3131c"
+    },
+    {
+      "path": "vendor/plaits/dsp/noise/dust.h",
+      "origin": "plaits/dsp/noise/dust.h",
+      "source_sha256": "2adb64c7368c5a459db23c71503a63c237b6936a281408a9ca16c7e661626107",
+      "change": "Instance RNG and caller-provided reciprocal, preserving per-sample excitation distribution and draw count.",
+      "vendored_sha256": "705ab83c120dfd2ccc2cda1e2eb764fca3eb58984070ee2030e68dbfe493c58f"
+    },
+    {
+      "path": "vendor/stmlib/dsp/cosine_oscillator.h",
+      "origin": "https://github.com/pichenettes/stmlib/blob/d18def816c51d1da0c108236928b2bbd25c17481/dsp/cosine_oscillator.h",
+      "source_sha256": "a7f6429e8bca85aa19ce91e3f1908fd7fb1fdf378a61fe2c87717a94d6f30a97",
+      "change": "none Terrain: quadrature reciprocal overload, same recurrence and legacy API.",
+      "vendored_sha256": "a7f6429e8bca85aa19ce91e3f1908fd7fb1fdf378a61fe2c87717a94d6f30a97"
+    },
+    {
+      "path": "vendor/plaits/resources_modal.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Exact selected definition; original license retained.",
+      "symbols": [
+        "lut_stiffness"
+      ],
+      "vendored_sha256": "6a3956c04310c3c325020f56a9ff1d902880243a09df2fbed9bce1fdaca62146"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/grain_engine.h",
+      "origin": "plaits/dsp/engine/grain_engine.h",
+      "source_sha256": "1c195ce6fd1da51139eb052db1e3dfa2355b4c8b657c8b53b7088193049a205c",
+      "change": "Add normalized-frequency and selected-output entry points; remove unused VOSIM include and unused grain_balance field.",
+      "vendored_sha256": "3d9138bbae174d76b3a50c4e5895f1e206dfe8f0c2e4f2e4855f60817107da0c"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/grain_engine.cc",
+      "origin": "plaits/dsp/engine/grain_engine.cc",
+      "source_sha256": "d6a46e24f55c1b76cabb8a948e9ef2ff9f90b5d05b0c3f15910749714805de72",
+      "change": "Formant: direct f0 and bounded relative AUX cutoff at 44.1 kHz; only selected oscillators/DC blocker advance, inactive variant suspended by user decision; BOTH and original note API retained.",
+      "vendored_sha256": "8b3ed3c4ab632e33859f69d13bbab46e026419515d6b42e51ddefb009ea69237"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/grainlet_oscillator.h",
+      "origin": "plaits/dsp/oscillator/grainlet_oscillator.h",
+      "source_sha256": "8699f86f7a291ee1ce0fae7cac2820629f68cc4048a8a5dbf805101159658a77",
+      "change": "none",
+      "vendored_sha256": "8699f86f7a291ee1ce0fae7cac2820629f68cc4048a8a5dbf805101159658a77"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/z_oscillator.h",
+      "origin": "plaits/dsp/oscillator/z_oscillator.h",
+      "source_sha256": "2eaef3dae08c6964e4c77acbee1906188ed6b6cc22c68ff541de5c71ef33152b",
+      "change": "none",
+      "vendored_sha256": "2eaef3dae08c6964e4c77acbee1906188ed6b6cc22c68ff541de5c71ef33152b"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/speech_engine.h",
+      "origin": "plaits/dsp/engine/speech_engine.h",
+      "source_sha256": "f433f9c089afb5d5d008d85cb25f06da6a35d958dabc5b796ff6d4366e5adc7d",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "16a115097e6526af33c6492e3f55690d728bf837bc00c41d849ab6d3c76e8dec"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/speech_engine.cc",
+      "origin": "plaits/dsp/engine/speech_engine.cc",
+      "source_sha256": "f1adf33c123eb0fb2db214cb7b83153e2905c3f497ee51ff6e41058cf402f10c",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "1c87b2aa1d035c74caa43d482f0b2b712eeb2f8d67306522638cb6a5879fb48e"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/naive_speech_synth.h",
+      "origin": "plaits/dsp/speech/naive_speech_synth.h",
+      "source_sha256": "2c9c38a9012b7462ef3af889b912511b8e887ac7de1fb29eee79a2e54e9df9d8",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "293828f0838e835925db01da9b26e6024964ac6110dba941f3afb9fbf134e9fb"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/naive_speech_synth.cc",
+      "origin": "plaits/dsp/speech/naive_speech_synth.cc",
+      "source_sha256": "fca90a2f6e9e92c0dca40d85f16c8b446af2b1e3d4bdc57e4f8f12c80e312da3",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "913d232391c8eb3e4a3040dfa6567206c320b7d5624cec77962b2c46b7e1cd8c"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/sam_speech_synth.h",
+      "origin": "plaits/dsp/speech/sam_speech_synth.h",
+      "source_sha256": "55667e61c1c53722b139e08632765153b63da13d0c7f0b024f8a332e51f500c2",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "6ca265b5f58e4d86b33189fdec64e285c8c8b22d3a9b6a8d683ea7a4dd6002a5"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/sam_speech_synth.cc",
+      "origin": "plaits/dsp/speech/sam_speech_synth.cc",
+      "source_sha256": "97f98367531c437aa27725dcd3ea2da48c5be50bba4e402e631408fe1239bd7f",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "2aecd305b1f23758fc6e4470c88c6f417b96ecdefbcc9d2480a1bf75301ab331"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/lpc_speech_synth.h",
+      "origin": "plaits/dsp/speech/lpc_speech_synth.h",
+      "source_sha256": "f3e7db24d8db2d98d53d0e802e7f2405e4d39379bee0cdfbe0f578007744115b",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "161bc1341ba63c30e79a0b82f408cd5a02ab593e655859bab9de1f45accd9bd6"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/lpc_speech_synth.cc",
+      "origin": "plaits/dsp/speech/lpc_speech_synth.cc",
+      "source_sha256": "83be3c9136717351a6bb04d309df8c3fe7efb5bef1a27d0147e640dff8b2715d",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "dc79707b56f1dd2f6c1ef236243dc624bd36d54d74c5334628314c16a1103514"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/lpc_speech_synth_controller.h",
+      "origin": "plaits/dsp/speech/lpc_speech_synth_controller.h",
+      "source_sha256": "35e3fda01f77ef62310b4d52efa0be6e2e6983ea7c40cab509b769175875a54a",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "fc01e239f78dcab1b9f74ffc575e5d4ad18be56a4493310c0ef29f5c08f3c0af"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/lpc_speech_synth_controller.cc",
+      "origin": "plaits/dsp/speech/lpc_speech_synth_controller.cc",
+      "source_sha256": "524dce2916beb257fc347f2ac44229afa9d089545fdd46e83e35ee5f415a732f",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "f897c59dffe6788d7c5399ccf4de2cfaa81851dbc63a9acfe2399e6e76897bc2"
+    },
+    {
+      "path": "vendor/plaits/dsp/speech/lpc_speech_synth_phonemes.cc",
+      "origin": "plaits/dsp/speech/lpc_speech_synth_phonemes.cc",
+      "source_sha256": "3885114e9dd3e736c91975b5e8dab580c733064111fe285f8a306e155985a2a5",
+      "change": "Speech vowels only: words/banks/decoder/prosody/triggered consonants omitted; H remapped to original half-range; direct frequency and selected output with shared histories retained; LPC clock remains 8 kHz at 44.1 kHz codec.",
+      "vendored_sha256": "5ca6923efca512f39580a2d5f30ec91a95515eea0e3de5cfbcff9208e5d70bf4"
+    },
+    {
+      "path": "vendor/plaits/resources_speech.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Exact selected definition; original license retained.",
+      "vendored_sha256": "f19fe03633739c1d277b5248ed16dcf0f472b4681cd6f4980bb0cf020d2a1b5f",
+      "symbols": [
+        "lut_lpc_excitation_pulse"
+      ]
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/swarm_engine.h",
+      "origin": "plaits/dsp/engine/swarm_engine.h",
+      "source_sha256": "5e76b32bf78a3eb968baf9be864fd42fc068277b4f0f01bfa448019d07a5c173",
+      "change": "Private RNG, direct normalized frequency, selected-output specialization with continuous oscillator histories; envelope coefficients scaled from 12/48kHz to elapsed block time at 44.1kHz. Init resets all eight grains. Unused includes omitted. Stage 174: native 16-frame exact transition coefficient table prepared before audio; per-grain cache index with original floating filter history and generic/mixed-size fallback retained. Shared block reciprocal, cached fixed linear-rank factor, positive bounded envelope sine; eight components and both oscillator histories retained. Stage 177: user-authorized suspension of the inactive oscillator, including phase, interpolation and pending saw correction; resume without reset. Shared grain envelope/RNG still advance, BOTH retains dual rendering.",
+      "vendored_sha256": "84f6cc79e1fc20116789b19b3749dc3f2b3c2886374308602d868c6d3f4e0d41"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/swarm_engine.cc",
+      "origin": "plaits/dsp/engine/swarm_engine.cc",
+      "source_sha256": "307b8e3c9c47dbbbf8e78fd06dc6b7c70a9130210a72ce46320c98e18a9a6e9a",
+      "change": "Private RNG, direct normalized frequency, selected-output specialization with continuous oscillator histories; envelope coefficients scaled from 12/48kHz to elapsed block time at 44.1kHz. Init resets all eight grains. Unused includes omitted. Stage 174: prepare shared native envelope table once in Init before audio, using target powf; compute block reciprocal once for all eight components.",
+      "vendored_sha256": "d07d367e271317199026b50856a854bcdc38ad80b92fd317cd1408e4d26034fb"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/wavetable_engine.h",
+      "origin": "plaits/dsp/engine/wavetable_engine.h",
+      "source_sha256": "7fd58a1efd6540fc1097ed2636dbb3947bb18c09c7cd4f3f03af67f3d5a5fb3b",
+      "change": "SMN factory banks only, no user wave loading; direct frequency and compile-time selected output; shared immutable map; private smoothing history.",
+      "vendored_sha256": "9da6f033ed40571dd54eeba9b37c3c3bbe5b1622511940a124707fb4eff46a63"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/wavetable_engine.cc",
+      "origin": "plaits/dsp/engine/wavetable_engine.cc",
+      "source_sha256": "56d4c95755dbd97bdca9158bb21f7ad61b52a6d019d9fb6c18f74a4e478d193c",
+      "change": "Factory 256-pointer map in flash, correcting original 64-pointer allocation/256 writes without per-voice map allocation. H maps to original first half with quantization removed. 44.1 kHz time constants; shared block reciprocal; selected output; duplicate fourth-bank reads omitted. Exact filter coefficient reused when unchanged. Stage 220 (only optimizations 1/2): read exact doubled int16 Hermite coefficients from shared flash; keep phase/navigation/differentiator states locally for each block and report once; all histories and per-sample formulas retained. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "62a48c112de30fae105166c6591e7bc9e333aaf6f44d5670db63dced10a6f132"
+    },
+    {
+      "path": "vendor/plaits/dsp/oscillator/wavetable_oscillator.h",
+      "origin": "plaits/dsp/oscillator/wavetable_oscillator.h",
+      "source_sha256": "869f314e373ac7d56841e1f7ff0da45ae4973eb07616b10480e84b75261f3081",
+      "change": "Stage 220: Differentiator::CopyFrom copies both history values for local block processing. Original interpolation/oscillator APIs, arithmetic and layout unchanged.",
+      "vendored_sha256": "27760a40164f86a27a2ed403bd25b1eda969fd83afa4baf24ed59fc297fae797"
+    },
+    {
+      "path": "vendor/plaits/resources_wavetable.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Stage 220: exact derived Hermite fields [2a,2b,2c,x0] for all 192*128 intervals, replacing the raw table without audio approximation. Original MIT notice retained. Deterministic generation/check against the read-only reference.",
+      "vendored_sha256": "8b1024d1010e72a654117dafc6635cdd8144bdc91fd202c154c3813c6bef8d73",
+      "derived_from_symbol": "wav_integrated_waves",
+      "generator": "tests/smn_synth/wavetable_coefficients.py"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine2/wave_terrain_engine.h",
+      "origin": "plaits/dsp/engine2/wave_terrain_engine.h",
+      "source_sha256": "d2515d78359d5a3add03b4bca177ab70b17ebbe4a18f1b58f6d795666d5c64ef",
+      "change": "Factory terrains only; selected MAIN/AUX and direct-frequency API, private fixed path buffer, shared exact Wavetable coefficient samples; safe lookup endpoints and negative sine phases, oversampling and formulas retained. Stage 228: specialize the selected terrain pair once per audio sample, retain both oversampled positions, one shared template definition of the formulas, dynamic BOTH/fallback API and unchanged private state; no added resource. Stage 235: reuse pair selection over exact interpolation runs; omit zero-weight neighbors and final WT residual <= 0.00011015. Block-rate target rounding barrier preserves histories. No new voice state/table; BOTH uses same endpoint output policy.",
+      "vendored_sha256": "5041bd99c6a295d04a9d3a17e91b6f7b17b544f7084f99f5570c88921f9fe4c8"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine2/wave_terrain_engine.cc",
+      "origin": "plaits/dsp/engine2/wave_terrain_engine.cc",
+      "source_sha256": "600e148dd0eb5e6742043b43e798c4d085e25ba955c18d02498b61a5cc786b71",
+      "change": "Factory terrains only; selected MAIN/AUX and direct-frequency API, private fixed path buffer, shared exact Wavetable coefficient samples; safe lookup endpoints and negative sine phases, oversampling and formulas retained. Stage 225: exact integer slope/curvature from contiguous existing Hermite fields, divide by two before float conversion; positive wrapped-index sine with original negative-phase protection. No extra table or state change. Stage 228: specialize the selected terrain pair once per audio sample, retain both oversampled positions, one shared template definition of the formulas, dynamic BOTH/fallback API and unchanged private state; no added resource. Stage 235: reuse pair selection over exact interpolation runs; omit zero-weight neighbors and final WT residual <= 0.00011015. Block-rate target rounding barrier preserves histories. No new voice state/table; BOTH uses same endpoint output policy. Stage 238: prepare shared WT coordinates once for paired factory banks 2/1 and 1/0; one endpoint guard for both banks; same per-bank differentiation and mixing order in MAIN/AUX/BOTH, no new table or voice state. Stage 323: exact 512 sine sample/difference pairs generated before compilation, 4096 shared flash bytes; Terrain-only lookup omits repeated slope subtraction, preserves original float phase wrapping/interpolation and both outputs. No new voice state or audio compromise. Stage 330: final AUX sine uses existing FM 8192-point nearest table; MAIN/internal terrain sines unchanged; shared immutable flash, no new state. Stage 339: AUX evaluates each neighbor once at midpoint of the two original quadrature positions; MAIN and path/interpolator histories unchanged; BOTH follows separate midpoint AUX policy. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "f220b0ce5f066d2cc0f305c8f016e3a7878d19cf947d2741b3099f324eac0b54",
+      "generator": "tests/smn_synth/terrain_sine_coefficients.py"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/fm_engine.h",
+      "origin": "plaits/dsp/engine/fm_engine.h",
+      "source_sha256": "640b94da4cdb6b1932c51517404c4944049b9cabeed50828a3f5b68414eda1c6",
+      "change": "Add normalized-frequency API and private selected-output template; original note API retained. Cache exact note control law only while normalized frequency is unchanged.",
+      "vendored_sha256": "18d2dad86c7ae986e09b6d7cac6ca590cfe0a813b6a7bf21e12a9428426523bf"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/fm_engine.cc",
+      "origin": "plaits/dsp/engine/fm_engine.cc",
+      "source_sha256": "0d9a76302b61be966988cebf851dde6b0fd52b10887b50875c03fc3c941f2f82",
+      "change": "Direct frequency with ratio LUT; only taming needs log2. Feedback time adapted to 44.1kHz, FIR initialized. Shared reciprocal, local phases/feedback, hoisted feedback factor. Selected output only; final inaudible FIR tail rebuilt for exact MAIN/AUX transitions, x4 retained. Cache exact note control law only while normalized frequency is unchanged. Stage 246: FM-only sine interpolation reads exact original sample/scaled-difference pairs, removing a subtraction and power-of-two multiplication per sine without reducing resolution, operators or x4. Stage 317: final AUX sine uses a nearest 8192-point table sampled from the original linear interpolation; common oscillators/feedback and x4 unchanged, MAIN audio unchanged; AUX FIR tail uses the same policy in all output modes. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "b2f903ab4541aac84f5efc26a0bd7774c2616d77a5d90bc3ecef4997379e2e96"
+    },
+    {
+      "path": "vendor/plaits/dsp/downsampler/4x_downsampler.h",
+      "origin": "plaits/dsp/downsampler/4x_downsampler.h",
+      "source_sha256": "6a53c884cc13b7d8f8a726d2df51c36178b181675b8298840e1dc050466ce697",
+      "change": "none",
+      "vendored_sha256": "6a53c884cc13b7d8f8a726d2df51c36178b181675b8298840e1dc050466ce697"
+    },
+    {
+      "path": "vendor/plaits/resources_fm.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Exact selected FM FIR resource; ratio and sine reuse the existing linked tables. Stage 246: append 512 immutable [original sine sample, float(next-sample)*2^-32] pairs (4096 bytes), generated and checked by tests/smn_synth/fm_coefficients.py; original FIR unchanged. Stage 317: final AUX sine uses a nearest 8192-point table sampled from the original linear interpolation; common oscillators/feedback and x4 unchanged, MAIN audio unchanged; AUX FIR tail uses the same policy in all output modes.",
+      "vendored_sha256": "7dddf6b567e429bd9c42bb3e5a0e86c250e5e6f292a8f85729828857208274be",
+      "symbols": [
+        "lut_4x_downsampler_fir"
+      ]
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/string_engine.h",
+      "origin": "plaits/dsp/engine/string_engine.h",
+      "source_sha256": "f59da0a488e5d5641924023ab4e22e485516179804ceda03283462f336c6ae63",
+      "change": "Single continuously excited string, MAIN only, fixed 16-sample entry point; unused trigger rotation, pitch history and temporary block removed. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused.",
+      "vendored_sha256": "b4cc0f254423d9b90dacc52eeafc8de01dd42febe8e8a11b5e3ed6598d74e813"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/string_engine.cc",
+      "origin": "plaits/dsp/engine/string_engine.cc",
+      "source_sha256": "b054d0a0e2dcee7a4ddd28728dd17ae9f372498030d8646857104f139ba7a266",
+      "change": "Continuous specialization; exact 32-draw LCG jump preserves former silent strings random consumption; one private string, no AUX generation.",
+      "vendored_sha256": "de3e94b0a65ae66c7b1b74744eec4906f7c6dc308a887ee9e310fac9ebaf4ce7"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/string_voice.h",
+      "origin": "plaits/dsp/physical_modelling/string_voice.h",
+      "source_sha256": "9b1c64502b34ad7686e2676cedff9c32ecf211e21066edd6eac20815f6983d78",
+      "change": "Continuous excitation interface, one filter and one string; unused triggered/noise-tail states removed. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused.",
+      "vendored_sha256": "395a3add5a55d110f844f2e711a21378f726978a20fbae009bb533340b820716"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/string_voice.cc",
+      "origin": "plaits/dsp/physical_modelling/string_voice.cc",
+      "source_sha256": "5e18234d34e057b5cb3d8f56989005c47faccbaf4f3a5cc435abfce9a856ad85",
+      "change": "Continuous accent 0.8, 16-sample preparation; original excitation coefficients and Dust rate at 44.1 kHz retained; buffer generation fused into string loop. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused.",
+      "vendored_sha256": "8e84ec114481bcab61931f1f08c524966ee143d4b3c99768c31a3c19270c8653"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/string.h",
+      "origin": "plaits/dsp/physical_modelling/string.h",
+      "source_sha256": "807b982762f661958cf28216c68fd5fa70116fcb13ad79210d30406c832e111e",
+      "change": "Fixed block and compile-time exact LCG jump helpers, single-string continuous processing; original 1024/256 delay lengths retained. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "2a4e4071e0887b130419991b8ce10727522a555283551b771f36e324993f81d3"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/string.cc",
+      "origin": "plaits/dsp/physical_modelling/string.cc",
+      "source_sha256": "290cf726aab4265e5dafaa730316c1404bd3ebaaceade898fc29a89193d36b09",
+      "change": "Fused Dust/excitation SVF/string loop with separate exact RNG cursors; block-local delay cursors and direct MAIN writes; original feedback, Hermite, allpass, nonlinearities and low-pitch SRC retained. SMN Audio In path bypasses noise/excitation filtering; resonator and per-voice state reused. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "9b57a42b25bcbf82ed624b254eb5ad89021270c09efbb5b31e704c7998ac379d"
+    },
+    {
+      "path": "vendor/plaits/dsp/physical_modelling/delay_line.h",
+      "origin": "plaits/dsp/physical_modelling/delay_line.h",
+      "source_sha256": "626a4c24e72220ecdc12fe3babbac1e5f0e16a63f1e22115a540fa9ee3ba9a52",
+      "change": "Block-local borrowed view and cursor commit; buffer shared only within the owning string block, original interpolation unchanged.",
+      "vendored_sha256": "79d42e15a6e7a986de359bd203c90d2565f1e2b602226e61a1f788da52133d29"
+    },
+    {
+      "path": "vendor/plaits/resources_string.cc",
+      "origin": "plaits/resources.cc",
+      "source_sha256": "de2b2adf661c0623a5ddf74326d7d3b88d7b3554c3aa0d710bf8ebd1c4cd18ef",
+      "change": "Exact selected definition; original MIT notice retained.",
+      "symbols": [
+        "lut_svf_shift"
+      ],
+      "vendored_sha256": "123908fd8de1aa50d269d6954f4e73ebb900338b01a02fc1889bbdd4b669cb71"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/particle_engine.h",
+      "origin": "plaits/dsp/engine/particle_engine.h",
+      "source_sha256": "be576351e4d086097f833f78b6ec094e75b60a98b21c9bbdc4d1ecf53991d523",
+      "change": "Image 280: fixed SMN MAIN has four particles; AUX and generic Plaits route retain six. Cache compensated MAIN density/gain separately. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "1231f0400f0b6fc24cdc5201bb3405a8b04583b9780418868f4ef68f71164711"
+    },
+    {
+      "path": "vendor/plaits/dsp/engine/particle_engine.cc",
+      "origin": "plaits/dsp/engine/particle_engine.cc",
+      "source_sha256": "436ea05dee9a378c334849f20fa73b04575787a47cc8d93e6a9b731cd949ca1a",
+      "change": "Image 280: continuous MAIN four particles, 1.5x event probability and 2/3 impulse gain with original pre-gain normalization; half-rate diffuser. AUX six unchanged, shared RNG advances only the selected route. Generic full-rate six-particle diagnostic route preserved. Editorial: clarify comments; executable code unchanged.",
+      "vendored_sha256": "3c3851df57cbdaa908dbbaba1735e4b15d063db0d9f7efc0861c0c5ee7acf8a9"
+    },
+    {
+      "path": "vendor/plaits/dsp/noise/particle.h",
+      "origin": "plaits/dsp/noise/particle.h",
+      "source_sha256": "b366d733e8be9586eaaab17b7acf809f25b8e13e1b34908d440dcbf30db4b810",
+      "change": "Image 273: integer event comparison reproduces uint32-to-float rounding; exact draw order including unused final/pitch draws. Sparse AUX sum preserves product-rounding boundary. Fixed-size/continuous templates and two-sample unrolling. Original factorized SVF/FMA retained after rejecting zero-input variant.",
+      "vendored_sha256": "8908d81f8f91e19624e6faaa2350a4904fdbc531ec9252c84b76e1e800c44977"
+    },
+    {
+      "path": "vendor/plaits/dsp/fx/diffuser.h",
+      "origin": "plaits/dsp/fx/diffuser.h",
+      "source_sha256": "2a377bb7aa6e9024481dd3f55a8cd330224bf224ac845d5e683a28734f72dce9",
+      "change": "Image 280: add fixed-block 22.05 kHz wet-only route, 15-tap half-band decimation/polyphase reconstruction, 14-sample aligned dry delay. Seven rescaled delays/taps, time-adapted damping and 16-tick half-rate LFO updates. No allocations or clears in render; full-rate route retained.",
+      "vendored_sha256": "5713c196d90a8160b955900dc029abd0e3c9cd1734604e2b92e2d1642e5d26e8"
+    },
+    {
+      "path": "vendor/plaits/dsp/fx/fx_engine.h",
+      "origin": "plaits/dsp/fx/fx_engine.h",
+      "source_sha256": "b361a6550794a04d5bcb4872349d1fcd0429da0662d80fd553656043adc04b73",
+      "change": "Image 280: selectable modulation update mask, default 31 unchanged. Half-rate diffuser uses mask 15 with unchanged per-update LFO advance.",
+      "vendored_sha256": "8d55715903019d407c874f20ccfa3b8d22a17794fb03487235ac940bf8ad8a97"
+    }
+  ]
+}

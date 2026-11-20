@@ -1,0 +1,17 @@
+# Fichiers de métadonnées macOS
+.DS_Store
+
+# Résultats de compilation de l'application et du bootloader
+/build/
+/bootloader/build/
+
+# Privés
+/AGENTS.md
+/doc/
+/.vscode/
+/.venv/
+/venv/
+
+# Cache des scripts Python
+__pycache__/
+*.pyc
